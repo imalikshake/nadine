@@ -886,8 +886,9 @@
 </script>
 
 
-<!--FIX OPEN burger to Close again-- >
+
 <script>
+  <!--FIX OPEN burger to Close again-- >
 jQuery(document).ready(function ($) {
   $('.header-menu-nav-item a').click(function () {
     $('body').removeClass('header--menu-open');
@@ -896,8 +897,9 @@ jQuery(document).ready(function ($) {
 });
 </script>
 
-<!--Redirect URLS: /yoga-en-workshops to /yoga - en - events and redirect / yoga - en - goodies to / eyzen - en-- >
+
 <script>
+  <!--Redirect URLS: /yoga-en-workshops to /yoga - en - events and redirect / yoga - en - goodies to / eyzen - en-- >
 if (window.location.pathname === '/yoga-en-workshops') {
   window.location.replace('/yoga-en-events');
 }
@@ -906,8 +908,9 @@ if (window.location.pathname === '/yoga-en-workshops') {
 }
 </script>
 
-<!--Logo URL and Title Update-- >
+
 <script>
+  <!--Logo URL and Title Update-- >
 window.addEventListener('DOMContentLoaded', () => {
   const newTitle = "Nadine Norman";
   const newHref = "https://linktr.ee/nadinenorman";
@@ -924,40 +927,42 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-  <!--Add class on /search page -->
-< script>
+
+<script>
+    <!--Add class on /search page -->
     if (document.location.pathname.indexOf("/search") === 0) {
         document.querySelector('body').classList.add('t-search');
     }
 </script>
 
-    < !--Custom Yoga Footer-->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const yogaPages = [
-                    "/yoga-en", "/yoga-fr",
-                    "/yoga-en-events", "/yoga-fr-evenements",
-                    "/eyezen-en", "/eyezen-fr"
-                ];
 
-                const currentPath = window.location.pathname;
+<script>
+< !--Custom Yoga Footer-->
+    document.addEventListener("DOMContentLoaded", function () {
+        const yogaPages = [
+            "/yoga-en", "/yoga-fr",
+            "/yoga-en-events", "/yoga-fr-evenements",
+            "/eyezen-en", "/eyezen-fr"
+        ];
 
-                if (yogaPages.some(slug => currentPath.includes(slug))) {
-                    const customFooter = document.createElement("div");
-                    customFooter.classList.add("custom-footer");
+        const currentPath = window.location.pathname;
 
-                    // FIX 1: `isFrench` line was broken and missing an operator
-                    const isFrench =
-                        currentPath.includes("/yoga-fr") ||
-                        currentPath.includes("/yoga-fr-evenements") ||
-                        currentPath.includes("/eyezen-fr");
+        if (yogaPages.some(slug => currentPath.includes(slug))) {
+            const customFooter = document.createElement("div");
+            customFooter.classList.add("custom-footer");
 
-                    // FIX 2: template literal needed backticks, not angle brackets
-                    customFooter.innerHTML = `<p class="sqsrte-small">&copy; ${new Date().getFullYear()} Nadine Norman. ${isFrench ? 'Tous droits réservés' : 'All rights reserved'}.</p>`;
+            // FIX 1: `isFrench` line was broken and missing an operator
+            const isFrench =
+                currentPath.includes("/yoga-fr") ||
+                currentPath.includes("/yoga-fr-evenements") ||
+                currentPath.includes("/eyezen-fr");
 
-                    // FIX 3: Make sure the footer exists before appending
-                    const footer = document.querySelector("footer#footer-sections");
-                    if (footer) footer.appendChild(customFooter);
-                }
-            });
-        </script>
+            // FIX 2: template literal needed backticks, not angle brackets
+            customFooter.innerHTML = `<p class="sqsrte-small">&copy; ${new Date().getFullYear()} Nadine Norman. ${isFrench ? 'Tous droits réservés' : 'All rights reserved'}.</p>`;
+
+            // FIX 3: Make sure the footer exists before appending
+            const footer = document.querySelector("footer#footer-sections");
+            if (footer) footer.appendChild(customFooter);
+        }
+    });
+</script>
