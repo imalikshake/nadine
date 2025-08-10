@@ -26,7 +26,18 @@
         top: 0 !important;
         left: 0 !important;
         bottom: 0 !important;
-        right: 0 !important;
+        <script>
+
+        /* Redirect URLS: /yoga-en-workshops to /yoga-en-events and redirect /yoga-en-goodies to /eyzen-en */
+        if (window.location.pathname==='/yoga-en-workshops') {
+            window.location.replace('/yoga-en-events');
+        }
+
+        if (window.location.pathname==='/yoga-en-goodies') {
+            window.location.replace('/eyezen-en');
+        }
+
+        </script>0 !important;
         padding: 0 !important;
     }
 
@@ -888,13 +899,13 @@
 
 
 <script>
-  <!--FIX OPEN burger to Close again-- >
-jQuery(document).ready(function ($) {
-  $('.header-menu-nav-item a').click(function () {
-    $('body').removeClass('header--menu-open');
-    $('button.header-burger-btn.burger').click();
-  });
-});
+    /* FIX OPEN burger to Close again */
+    jQuery(document).ready(function ($) {
+        $('.header-menu-nav-item a').click(function () {
+            $('body').removeClass('header--menu-open');
+            $('button.header-burger-btn.burger').click();
+        });
+    });
 </script>
 
 
@@ -910,26 +921,26 @@ if (window.location.pathname === '/yoga-en-workshops') {
 
 
 <script>
-  <!--Logo URL and Title Update-- >
-window.addEventListener('DOMContentLoaded', () => {
-  const newTitle = "Nadine Norman";
-  const newHref = "https://linktr.ee/nadinenorman";
+  /* Logo URL and Title Update */
+    window.addEventListener('DOMContentLoaded', () => {
+        const newTitle = "Nadine Norman";
+        const newHref = "https://linktr.ee/nadinenorman";
 
-  setTimeout(() => {
-    document.querySelectorAll('#site-title').forEach(title => {
-      if (title) {
-        title.href = newHref;
-        title.innerHTML = newTitle;
-        title.style = "font-size:; display: block; visibility: visible; opacity: 1;";
-      }
+        setTimeout(() => {
+            document.querySelectorAll('#site-title').forEach(title => {
+                if (title) {
+                    title.href = newHref;
+                    title.innerHTML = newTitle;
+                    title.style = "font-size:; display: block; visibility: visible; opacity: 1;";
+                }
+            });
+        }, 100);
     });
-  }, 100);
-});
 </script>
 
 
 <script>
-    <!--Add class on /search page -->
+    /* Add class on /search page */
     if (document.location.pathname.indexOf("/search") === 0) {
         document.querySelector('body').classList.add('t-search');
     }
@@ -937,7 +948,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 <script>
-< !--Custom Yoga Footer-->
+    /* Custom Yoga Footer */
     document.addEventListener("DOMContentLoaded", function () {
         const yogaPages = [
             "/yoga-en", "/yoga-fr",
