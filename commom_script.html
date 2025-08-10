@@ -1,0 +1,66 @@
+<!-- Custom Breakpoint From Will-Myers.com -->
+<script src="https://cdn.jsdelivr.net/gh/willmyethewebsiteguy/customBreakpoint@1/customBreakpoint.min.js"></script>
+
+<!--- SQS MODS EXPAND SECTION PLUGIN START --->
+<!--- INCLUDE JQUERY IF YOU DONT HAVE IT ALREADY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>var preview = "hide";</script>
+<style>
+    .fhmodal {
+        z-index: 999999999;
+    }
+
+    .fhmodal .page-section>.content-wrapper {
+        width: auto;
+    }
+</style>
+<script>
+    const fhExpandSectionsOptions = {
+        "scrollTop": true,
+        "scrollTopOffset": -100,
+        "scrollSpeed": 1000,
+        "forceModalOnMobile": false
+    }
+</script>
+
+<script src="https://mods.sqsmods.com/expand-sections-plugin/js/expand-v3.min.js" defer></script>
+<!---SQS MODS EXPAND SECTION PLUGIN END --->
+
+<!-- HOW TO CREATE A "READ MORE" DROPDOWN INSIDE AUTO LAYOUTS IN 7.1 -->
+<script>
+    $(function () {
+        $('.list-item-content__description p:has(u)').click(function () {
+            $(this).nextUntil('p:has(u)').slideToggle();
+            $(this).find('u').toggleClass('open-dropdown');
+        });
+    });
+</script>
+
+<!-- sqs:beyondspace--ground-control -->
+<script>
+    (() => { var e = "beyondspace--ground-control"; if (!window.top.document.getElementById(e)) { var t = window.top.document.createElement("script"); t.id = e, t.src = "https://cdn.jsdelivr.net/gh/BeyondspaceStudio/beyondspace-snippets@0.0.57/src/ground-control/index.min.js", window.top.document.body.appendChild(t) } })();
+</script>
+<!-- /sqs:beyondspace--ground-control -->
+
+<!-- sqs:beyondspace--classic-gallery -->
+<script>
+    (() => { if (window.self !== window.top && window.top.Static.SQUARESPACE_CONTEXT.authenticatedAccount) { var e = "beyondspace--classic-gallery"; if (!window.top.document.getElementById(e)) { var t = window.top.document.createElement("script"); t.id = e, t.src = "https://cdn.jsdelivr.net/gh/BeyondspaceStudio/beyondspace-snippets@0.0.44/src/classic-gallery-block/index.min.js", window.top.document.body.appendChild(t) } } })();
+</script>
+<!-- /sqs:beyondspace--classic-gallery -->
+
+<!-- sqs:beyondspace--quick-access-toolbar -->
+<script>
+    (() => { var e = "beyondspace--quick-access-toolbar"; if (!window.top.document.getElementById(e)) { var t = window.top.document.createElement("script"); t.id = e, t.src = "https://cdn.jsdelivr.net/gh/BeyondspaceStudio/beyondspace-snippets@0.0.44/src/quick-access-toolbar/index.min.js", window.top.document.body.appendChild(t) } })();
+</script>
+<!-- /sqs:beyondspace--quick-access-toolbar -->
+
+<!-- sqs:beyondspace--lightbox-studio -->
+<script src="/s/beyondspace-lightbox-studio.js" data-id="6821fadbff23217aed2e115f"
+    id="beyondspace--lightbox-studio"></script>
+<!-- /sqs:beyondspace--lightbox-studio -->
+
+<!-- sqs:beyondspace--assets-library-enhanced -->
+<script>
+    (() => { if (window.top && window !== window.top) { var e = "beyondspace--assets-library-enhanced"; if (!window.top.document.getElementById(e)) { var t = window.top.document.createElement("script"); t.id = e, t.src = "https://cdn.jsdelivr.net/gh/BeyondspaceStudio/beyondspace-snippets@0.0.44/src/assets-library-enhanced/index.js", window.top.document.body.appendChild(t) } } })();
+</script>
+<!-- /sqs:beyondspace--assets-library-enhanced -->

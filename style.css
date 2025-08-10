@@ -1,0 +1,831 @@
+<style>
+/* === [FORMS] === */  
+/* Modify email field checkbox caption "Sign up for news and updates" */
+.form-wrapper .form-item.field.email .option span {
+  font-size: 0 !important;
+  visibility: hidden;
+}
+
+.form-wrapper .form-item.field.email .option span:after {
+  content: "Sign up for ENEWS"; /* edit text within quotes */
+  font-size: 12px;
+  font-family: monospace;
+  visibility: visible;
+}
+    /* --- end--- */
+  
+/* === REMOVE PADDING above and below VIDEO BLOCK in #practices section === */
+
+#practice .sqs-block-video .sqs-block-content,
+#practice .sqs-block-video .intrinsic,
+#practice .sqs-block-video .embed-block-wrapper,
+#practice .sqs-block-video .sqs-native-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    padding: 0 !important;
+  }
+
+#practice
+.sqs-block-video .video-player {
+    padding: 0 !important;
+  }
+  
+#practice .sqs-block-video .video-player video {
+    object-fit: cover !important;
+  }
+
+/* Mobile adjustments for gallery */
+@media screen and (max-width: 767px) { 
+  #explore-classes-gallery {
+    position: relative;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+}
+  /* === Keep Aspect Ratio of Fullscreen Gallery Section Images === */
+#explore-classes-gallery 
+.gallery-fullscreen-slideshow {
+   height: clamp(0px, 56.25vw, 85vh) !important;
+}
+
+/* Scrollable Text Block */
+@media screen and (min-width: 768px) {
+  #block-86c425e602cbf1c986ad 
+  .sqs-block-content {
+    --border-thickness: 1px;
+    --border-color: hsla(0, 0%, 70%, 1);
+    --border-radius: 8px;
+    --max-height: 180px;
+    --padding: 8px;
+    --scrollbar-track: white;
+    --scrollbar-color: hsla(0, 0%, 70%, 1);
+    border: var(--border-thickness) solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    height: var(--max-height);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #block-86c425e602cbf1c986ad .sqs-block-content .sqs-html-content {
+    max-height: calc(var(--max-height) - 2 * var(--padding));
+    padding: var(--padding);
+    overflow-y: auto;
+  }
+  
+  #block-86c425e602cbf1c986ad .sqs-block-content .sqs-html-content::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  #block-86c425e602cbf1c986ad .sqs-block-content .sqs-html-content::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+  }
+  
+  #block-86c425e602cbf1c986ad .sqs-block-content .sqs-html-content::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+  }
+}
+
+/* SCROLLING TEXT STYLES */
+  /* Practice banner text*/
+#block-8ec4e50b77d2f52e8eb6 .Marquee * {
+  color: white;
+  font-style: italic;
+}
+
+/* Montmartre banner text */
+#block-803dd155a19f58b43c8b .Marquee * {
+  font-style: italic;
+  font-family: Julius Sans One;
+  font-weight: 800;
+  color: white;
+}
+
+
+
+/* Show Summary Carousel on Mobile – Grid on Desktop */
+  /*
+@media screen and (min-width:768px) {
+  div.summary-item-list {
+    transform: unset !important;
+    margin: unset !important;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-gap: 10px 10px;
+  }
+  
+  header.summary-block-header {
+    display: none;
+  }
+}
+*/
+/* Show Gallery Slideshow to Stacked (Mobile) Gallery Block Grid */
+/*@media screen and (max-width:767px) {
+  div#block-99f65f1eeb095d74cf9a .slide {
+    width: 100% !important;
+    margin-bottom: 50px !important;
+  }
+  
+  div#block-99f65f1eeb095d74cf9a img {
+    width: 100% !important;
+    height: auto !important;
+    top: unset !important;
+    left: unset !important;
+  }
+  
+  div#block-99f65f1eeb095d74cf9a .content-fit {
+    padding-bottom: unset !important;
+    height: auto !important;
+  }
+}
+*/
+/* SUMMARY BLOCK SHOW DATE ON IMAGE BLOCK */
+/*
+.sqs-block-summary-v2 .summary-item .summary-thumbnail-event-date {
+  display: none !important;
+}
+*/
+ 
+    /* Carousel Lists */
+/* JUSTIFY text Carousel List description */
+/* Desktop and up */
+#practice-list .user-items-list-carousel .list-item-content__description p:nth-of-type(1),
+#class-offerings .user-items-list-carousel .list-item-content__description p:nth-of-type(1) {
+  text-align: justify;
+}
+
+/* Mobile-specific */
+@media (max-width: 767px) {
+#practice-list .user-items-list-carousel .list-item-content__description p:nth-of-type(2),
+#class-offerings .user-items-list-carousel .list-item-content__description p:nth-of-type(2) {
+    text-align: justify;
+    word-spacing: 0.05em;
+    letter-spacing: 0.02em;
+  }
+}
+/* Echoes section: justify all description paragraphs */
+#echoes .user-items-list-carousel .list-item-content__description p {
+  text-align: justify;
+}
+
+/* CLASS OFFERINGS italic text colour */
+#class-offerings .list-item-content__description p em {
+  color: #fce8eb;
+  font-family: monospace;
+}
+
+/* Section CLASS OFFERINGS Change Section Title */
+#class-offerings .list-section-title {
+  font-weight: 800;
+  font-family: monospace, Julius Sans One;
+  font-size: .9rem;
+}
+
+/* Change CLASS OFFERINGS content */
+#class-offerings .user-items-list-carousel .list-item .list-item-content {
+  margin-left: 0;
+  margin-right: 0;  
+  white-space: nowrap;
+}   
+ 
+#class-offerings .user-items-list-carousel .list-item .list-item-content__title {
+  font-weight: 800;
+}
+
+#class-offerings .list-item-content__button-wrapper .list-item-content__button-container {
+  align-items: center !important;
+}
+
+/* "Read On" DROPDOWN CLASS OFFERINGS LIST */
+#class-offerings .list-item-content__description p:has(u) ~ * {
+  display: none;
+}
+
+/* "Read On" link CLASS OFFERINGS */
+#class-offerings .list-item-content__description u {
+  align-items: left;
+  display: flex;
+  cursor: pointer;
+  font-size: .8rem;
+  justify-content: left;
+  pointer-events: auto;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#class-offerings .list-item-content__description u::after {
+  content: 'ⓘ' !important;
+  margin-left: 10px !important;
+}
+
+/* Change the symbol when the dropdown is open CLASS OFFERINGS */
+#class-offerings .list-item-content__description u.open-dropdown::after {
+  content: 'X' !important;
+  color: pink;
+  margin-left: 10px !important;
+}
+
+/* Section ECHOES */  
+#echoes .user-items-list-carousel .list-item .list-item-content__title {
+  color: white;
+  font-family: serif;
+  font-style: oblique;
+  font-weight: 600;
+}
+
+#echoes .list-item-content__description p {
+  color: white;
+  font-weight: 300;
+  letter-spacing: .01em;
+  text-align: justify;
+}
+
+/* "Read On" DROPDOWN ECHOES */
+#echoes .list-item-content__description p:has(u) ~ * {
+  display: none;
+}
+
+/* "Read On" link ECHOES */
+#echoes .list-item-content__description u {
+  align-items: right !important;
+  cursor: pointer;
+  font-size: .8rem;
+  justify-content: right;
+  pointer-events: auto;
+  text-decoration: none;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#echoes .list-item-content__description u::after {
+  content: '+' !important;
+  margin-left: 10px !important;
+}
+
+/* Change the symbol when the dropdown is open ECHOES */
+#echoes .list-item-content__description u.open-dropdown::after {
+  content: '-' !important;
+  color: pink;
+  margin-left: 10px !important;
+}
+
+  
+/* --- Pulsating Effect for Buttons --- */
+/* JOIN UP button S #montmartre-classes */
+#block-bed1d601adea0cd281af .sqs-button-element--primary {
+    animation: pulse 1s infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+/* Workshops Scoped rotating text color to a specific block */
+/*#block-ad5f8f8980330ba72e07 .rotatingtext span {
+  color: #FFFFFF !important;
+}
+*/  
+
+/* Page Gradient */
+body {
+  background: linear-gradient(
+    to bottom,
+    rgba(252, 229, 237, 0.15) 0%,
+    rgba(252, 229, 237, 0.2) 30%,   
+    rgba(252, 229, 237, 0.1) 60%,  
+    rgba(252, 229, 237, 0.05) 100% 
+  ) !important;
+}
+
+.section-background, .section-border, section {
+  background-color: transparent !important;
+}
+
+/* section backgrounds and bg gradients */
+
+/* CONTENT WRAPPER GRADIENTS */
+#class-offerings .content-wrapper,
+#montmartre-classes .content-wrapper,
+#retreats .content-wrapper {
+  width: 100% !important;
+  max-width: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+#montmartre-classes .content-wrapper {
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.4) 7%,
+    rgba(255, 255, 255, 0.1) 12%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.1) 88%,
+    rgba(255, 255, 255, 0.4) 93%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+#class-offerings .content-wrapper {
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 3%,
+    rgba(255, 255, 255, 0) 9%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.1) 91%,
+    rgba(255, 255, 255, 0.3) 97%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+}
+
+#retreats .content-wrapper {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(37, 53, 81, 0.2) 5%,
+    rgba(37, 53, 81, 0.3) 9%,
+    rgba(37, 53, 81, 0.5) 50%,
+    rgba(37, 53, 81, 0.3) 91%,
+    rgba(37, 53, 81, 0.2) 95%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+
+/* SECTION WRAPPER GRADIENT SYSTEM  */
+section.span-section-parent-practices {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* PRATICES background gif  */
+section.span-section-parent-practices::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  pointer-events: none;
+  background: url('https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/5bc9d1b0-5cbe-4601-8c2e-e9d4f58ff20d/yoga+slow+flow+vid+87.gif') center/cover no-repeat;
+  filter: blur(3px) brightness(0.9);
+  transform: scale(1.05);
+}
+  
+/* PRACTICES gradient overlay bg */
+section.span-section-parent-practices::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 1;   
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(37, 53, 81, 0.5) 5%,
+    rgba(37, 53, 81, 0.6) 9%,
+    rgba(37, 53, 81, 0.7) 50%,
+    rgba(37, 53, 81, 0.6) 91%,
+    rgba(37, 53, 81, 0.5) 95%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+  
+/* SECTION WRAPPER GRADIENT SYSTEM SHINE */
+  section.span-section-parent-shine {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+  
+/* SHINE background gif  */
+section.span-section-parent-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: url('https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/1681984666212-VTQVCLTF80BIMM5H1H6L/passingthrough+pic.gif') center/cover no-repeat;
+  pointer-events: none;
+  filter: brightness(0.95) contrast(1.05);
+  transform: scale(1.02);
+}
+  
+/* SHINE gradient overlay bg */
+section.span-section-parent-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.9) 10%,
+    rgba(255, 255, 255, 0.6) 20%,
+    rgba(37, 53, 81, 0.1) 30%,
+    rgba(37, 53, 81, 0.2) 35%,
+    transparent 45%, 
+    rgba(37, 53, 81, 0.5) 60%,
+    rgba(37, 53, 81, 0.4) 85%,
+    rgba(37, 53, 81, 0.3) 90%,
+    rgba(255, 255, 255, 0.3) 94%,
+    rgba(255, 255, 255, 0.95) 98%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+#share-the-shine {
+  position: relative;
+  z-index: 1;
+}
+#echoes,
+#echoes .user-items-list-section,
+#echoes .content-wrapper,
+#echoes .content,
+#echoes .user-items-list,
+#echoes .user-items-list-item-container,
+#echoes .user-items-list-carousel {
+  position: relative;
+  z-index: 2 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+  
+/* === FOOTER GRADIENT OVERLAY === */
+#footer-yoga-en .section-background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.4) 8%,
+    rgba(255, 255, 255, 0.1) 15%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.1) 85%,
+    rgba(255, 255, 255, 0.4) 92%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  opacity: 1;
+} 
+
+  
+/* === NAV ITEMS ===*/ 
+  /*===MOBILE MENU === */
+/* Change burger icon, word Menu */
+.burger-box:after {
+  content: "YOGA☰";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  height: 40px;
+  width: auto;
+  visibility: visible;
+  white-space: nowrap;
+}
+
+/* Hide original burger icon */
+.burger-box div {
+  display: none;
+}
+  
+/* ENSURE SITE TITLE IS VISIBLE */
+a#site-title {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.header-title-logo,
+.header-title-text {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.header-title {
+  display: block !important;
+  visibility: visible !important;
+}
+
+
+
+
+/*** Styling for Header ***/
+.header .header-burger {
+  display: flex;
+}
+
+.header-nav,
+.header-actions {
+  display: none;
+}
+
+.header--menu-open .header-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Half screen desktop menu */
+@media only screen and (min-width:767px) {
+  .header--menu-open .header-menu {
+    width: auto;
+    box-shadow: 5px 5px 15px #333;
+    margin-left: 0%;
+  }
+} 
+
+/* Mobile NAV folder links at the top */
+.header--menu-open .header-menu-nav-folder-content {
+  justify-content: flex-start !important;
+  margin-top: 3vh !important;
+}
+
+/* Navigation Items & Dropdowns */
+.header-nav-item a, 
+.header-menu-nav-item a, 
+footer#footer-sections a {
+  transition: color 0.3s ease-in-out, font-style 0.3s ease-in-out;
+}
+
+/* Hover & Active States for Desktop & Mobile Menus */
+.header-nav-item a:hover, 
+.header-nav-item a:focus, 
+.header-nav-item a:active, 
+.header-menu-nav-item a:hover, 
+.header-menu-nav-item a:focus, 
+.header-menu-nav-item a:active, 
+.mobile-nav a:hover, 
+.mobile-nav a:focus, 
+.mobile-nav a:active {
+  color: #FF007F !important;
+  font-style: bold !important;
+}
+
+/* Dropdown Menu Styling */
+.header-nav-folder-content {
+  background: transparent !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;
+  padding-top: 12px !important;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* Reduce spacing between dropdown menu items */
+.header-nav-folder-content a {
+  padding: 2px 10px !important;
+  display: block;
+}
+
+/* Dropdown Active State */
+.header-nav-folder-content.active, 
+.header-nav-folder-content:focus-within {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown Items */
+.header-nav-folder-item a {
+  transition: color 0.3s ease-in-out, font-style 0.3s ease-in-out;
+}
+
+.header-nav-folder-item a:hover, 
+.header-nav-folder-item a:focus, 
+.header-nav-folder-item a:active {
+  color: #FF007F !important;
+  font-style: italic !important;
+}
+
+/* Mobile Navigation */
+.header-burger,
+.burger-active {
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-burger:active,
+.burger-active:active {
+  transform: scale(1.1);
+}
+
+/* Style All Other Links Without Underline */
+a {
+  color: inherit;
+  text-decoration: none !important;
+  transition: color 0.3s ease-in-out, font-style 0.3s ease-in-out;
+}
+
+a:hover, 
+a:focus, 
+a:active {
+  color: #FF007F !important;
+  font-style: italic !important;
+}
+
+/* EXCEPTIONS - Bio & Yoga Footer */
+#bio a {
+  text-decoration: underline !important;
+}
+
+/* Footer Links */
+.custom-yoga-footer a {
+  color: #FF007F !important;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-yoga-footer a:hover {
+  color: #d60069 !important;
+}
+
+/* Custom Footer and center */
+.custom-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.custom-footer p.sqsrte-small {
+  margin: 5px 0;
+  line-height: 1.1;
+  font-size: .7rem !important;
+}
+
+/* Background Image For Mobile Menu */
+.header-menu-bg {
+  --opacity: 0.5;
+  --blur: 1px;
+}
+
+.header-menu-bg:after {
+  background-image: url(https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/3860b778-cb05-48bc-9952-dd00dd1d4f0f/yoga+slow+flow+vid+last+one.gif);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: blur(var(--blur, 0px));
+  transform: scale(1);
+  opacity: var(--opacity, 5);
+  transition: transform 0.8s ease;
+}
+
+.header--menu-open .header-menu-bg:before {
+  transform: scale(1.1);
+}
+
+/* 2 mini sites on same site behavior */
+/* Hide items on desktop */
+nav.header-nav-list > div:nth-child(1), 
+nav.header-nav-list > div:nth-child(2), 
+nav.header-nav-list > div:nth-child(3), 
+nav.header-nav-list > div:nth-child(4) {
+  display: none !important;
+}
+
+/* Hide items on mobile */
+[data-folder="root"] > div:first-child > div:first-child > div:nth-child(1), 
+[data-folder="root"] > div:first-child > div:first-child > div:nth-child(2), 
+[data-folder="root"] > div:first-child > div:first-child > div:nth-child(3), 
+[data-folder="root"] > div:first-child > div:first-child > div:nth-child(4) {
+  display: none !important;
+}
+
+/* Different yoga - footer hide artwork footer */
+footer.sections section:nth-child(1),
+footer.sections section:nth-child(5),
+footer.sections section:nth-child(6),
+footer.sections section:nth-child(7) {
+  display: none !important;
+}
+
+/* Search page specific */
+body.t-search footer.sections section:nth-child(1),  
+body.t-search footer.sections section:nth-child(5),
+body.t-search footer.sections section:nth-child(6), 
+body.t-search footer.sections section:nth-child(7) {
+  display: none !important;
+}
+
+
+
+ 
+
+/** FONT SIZE (this page only) **/ 
+/** RESPONSIVE media query **/
+/* Devices larger than 991px */
+@media (min-width: 991px) {
+  #siteWrapper h1 {
+    font-size: 2.4rem;
+  }
+  #siteWrapper h2 {
+    font-size: 2rem;
+  }
+  #siteWrapper h3 {
+    font-size: 1.6rem;
+  }
+  #siteWrapper h4 {
+    font-size: 1.2rem;
+  }
+  #siteWrapper p.sqsrte-large {
+    font-size: 1.2rem;
+  }
+  #siteWrapper p {
+    font-size: 1.1rem;
+  }
+  #siteWrapper p.sqsrte-small {
+    font-size: 1rem;
+  }
+#siteWrapper p.monospace {
+        font-size: 1.6rem;
+  }
+}
+
+/* Devices between 641px and 990px */
+@media (min-width: 641px) and (max-width: 990px) {
+  #siteWrapper h1 {
+    font-size: 2.4rem;
+  } 
+  #siteWrapper h2 {
+    font-size: 2rem;
+  }
+  #siteWrapper h3 {
+    font-size: 1.6rem;
+  }
+  #siteWrapper h4 {
+    font-size: 1.2rem;
+  }
+  #siteWrapper p.sqsrte-large {
+    font-size: 1.1rem;
+  }
+  #siteWrapper p {
+    font-size: 1rem;
+  }
+  #siteWrapper p.sqsrte-small {
+    font-size: 0.9rem;
+  }
+#siteWrapper p.monospace {
+        font-size: 1.4rem;      
+  }
+}
+
+
+/* Devices smaller than 640px */
+@media (max-width: 640px) {
+  #siteWrapper h1 {
+    font-size: 2.2rem;
+  }
+  #siteWrapper h2 {
+    font-size: 1.8rem;
+  }
+  #siteWrapper h3 {
+    font-size: 1.4rem;
+  }
+  #siteWrapper h4 {
+    font-size: 1rem;
+  } 
+  #siteWrapper p.sqsrte-large {
+    font-size: 1rem;
+  }
+  #siteWrapper p {
+    font-size: 0.9rem;
+  }
+  #siteWrapper p.sqsrte-small {
+    font-size: 0.8rem;
+  }
+#siteWrapper p.monospace {
+        font-size: 1.4rem;
+  }
+}
+</style>

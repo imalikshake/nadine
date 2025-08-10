@@ -1,0 +1,119 @@
+
+
+<script>
+  //vanilla script
+document.addEventListener("DOMContentLoaded", function () {
+    // === Wrap PRACTICE and PRACTICE-LIST ===
+  const practices = [
+    document.querySelector('section[data-section-id="688fc3be0494085946aeb364"]'),
+    document.querySelector('section[data-section-id="688fc3be0494085946aeb365"]')
+  ];
+// === Wrap SHARE-THE-SHINE and ECHOES ===
+  const shine = [
+    document.querySelector('section[data-section-id="688fc3be0494085946aeb383"]'),
+    document.querySelector('section[data-section-id="688fc3be0494085946aeb384"]')
+  ];
+const echoesSection = document.querySelector('section[data-section-id="688fc3be0494085946aeb384"]');
+if (echoesSection) echoesSection.id = "echoes";
+
+  function wrapSections(sections, wrapperClass) {
+    const validSections = sections.filter(Boolean);
+    if (validSections.length === 0) return;
+
+    const wrapper = document.createElement("section");
+    wrapper.className = wrapperClass;
+
+    const first = validSections[0];
+    first.parentNode.insertBefore(wrapper, first);
+
+    validSections.forEach(el => wrapper.appendChild(el));
+  }
+
+  // Wrap both section groups
+  wrapSections(practices, 'span-section-parent-practices');
+  wrapSections(shine, 'span-section-parent-shine');
+
+  // Add gradient overlay inside practices wrapper
+  const overlay = document.createElement("div");
+  overlay.className = "gradient-overlay";
+  const target = document.querySelector(".span-section-parent-practices");
+  if (target) target.appendChild(overlay);
+});
+</script>
+
+
+<!--FIX OPEN burger to Close again-- >
+<script>
+jQuery(document).ready(function ($) {
+  $('.header-menu-nav-item a').click(function () {
+    $('body').removeClass('header--menu-open');
+    $('button.header-burger-btn.burger').click();
+  });
+});
+</script>
+
+<!--Redirect URLS: /yoga-en-workshops to /yoga - en - events and redirect / yoga - en - goodies to / eyzen - en-- >
+<script>
+if (window.location.pathname === '/yoga-en-workshops') {
+  window.location.replace('/yoga-en-events');
+}
+  if (window.location.pathname === '/yoga-en-goodies') {
+  window.location.replace('/eyezen-en');
+}
+</script>
+
+<!--Logo URL and Title Update-- >
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const newTitle = "Nadine Norman";
+  const newHref = "https://linktr.ee/nadinenorman";
+
+  setTimeout(() => {
+    document.querySelectorAll('#site-title').forEach(title => {
+      if (title) {
+        title.href = newHref;
+        title.innerHTML = newTitle;
+        title.style = "font-size:; display: block; visibility: visible; opacity: 1;";
+      }
+    });
+  }, 100);
+});
+</script>
+
+  <!--Add class on /search page -->
+    < script >
+if (document.location.pathname.indexOf("/search") === 0) {
+    document.querySelector('body').classList.add('t-search');
+}
+</script >
+
+< !--Custom Yoga Footer-- >
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  const yogaPages = [
+        "/yoga-en", "/yoga-fr",
+        "/yoga-en-events", "/yoga-fr-evenements",
+        "/eyezen-en", "/eyezen-fr"
+        ];
+
+        const currentPath = window.location.pathname;
+
+  if (yogaPages.some(slug => currentPath.includes(slug))) {
+    const customFooter = document.createElement("div");
+        customFooter.classList.add("custom-footer");
+
+        // FIX 1: `isFrench` line was broken and missing an operator
+        const isFrench =
+        currentPath.includes("/yoga-fr") ||
+        currentPath.includes("/yoga-fr-evenements") ||
+        currentPath.includes("/eyezen-fr");
+
+        // FIX 2: template literal needed backticks, not angle brackets
+        customFooter.innerHTML = `<p class="sqsrte-small">&copy; ${new Date().getFullYear()} Nadine Norman. ${isFrench ? 'Tous droits réservés' : 'All rights reserved'}.</p>`;
+
+        // FIX 3: Make sure the footer exists before appending
+        const footer = document.querySelector("footer#footer-sections");
+        if (footer) footer.appendChild(customFooter);
+  }
+});
+    </script>
