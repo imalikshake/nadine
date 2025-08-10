@@ -73,43 +73,49 @@
         position: relative;
         z-index: 0;
         overflow: hidden;
-        padding-top: 0 !important;
-        /* Force remove padding */
         padding: 0 !important;
-        /* Remove all padding */
-        margin-top: 0 !important;
-        /* Force remove top margin */
         margin: 0 !important;
-        /* Remove all margins */
+        min-height: 100vh;
+        /* ensure minimum height */
     }
 
-    /* GIF background */
+    /* Force remove any default Squarespace backgrounds for practices */
+    section.span-section-parent-practices .section-background,
+    section.span-section-parent-practices .section-border {
+        background: transparent !important;
+        opacity: 0 !important;
+    }
+
+    /* PRATICES background gif  */
     section.span-section-parent-practices::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image:
-            url("https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/1681984666212-VTQVCLTF80BIMM5H1H6L/passingthrough+pic.gif");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: -2;
+        z-index: 0;
+        inset: 0;
+        pointer-events: none;
+        background: url('https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/3860b778-cb05-48bc-9952-dd00dd1d4f0f/yoga+slow+flow+vid+last+one.gif') center/cover no-repeat;
+        background-color: #f0f0f0;
+        /* fallback color */
+        filter: blur(3px) brightness(0.9);
+        transform: scale(1.05);
     }
 
-    /* Navy background colour overlay */
+    /* PRACTICES gradient overlay bg */
     section.span-section-parent-practices::after {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(16, 23, 39, 0.7);
-        /* semi-transparent navy overlay */
         z-index: -1;
+        inset: 0;
+        pointer-events: none;
+        opacity: 1;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(37, 53, 81, 0.5) 5%,
+                rgba(37, 53, 81, 0.6) 9%,
+                rgba(37, 53, 81, 0.7) 50%,
+                rgba(37, 53, 81, 0.6) 91%,
+                rgba(37, 53, 81, 0.5) 95%,
+                rgba(255, 255, 255, 1) 100%);
     }
 
     /* === Show Summary Carousel on Mobile – Grid on Desktop === */
@@ -117,10 +123,6 @@
     @media screen and (max-width: 767px) {
         #practices-list .summary-grid .summary-item {
             margin: 0 !important;
-        }
-
-        #practices-list .summary-grid .summary-item .summary-content {
-            /* max-width: 100vw !important; */
         }
     }
 
@@ -327,6 +329,66 @@
 
     /* === BACKGROUND and FONT STYLING == */
 
+    /* Page Gradient */
+    body {
+        background: linear-gradient(to bottom,
+                rgba(252, 229, 237, 0.15) 0%,
+                rgba(252, 229, 237, 0.2) 30%,
+                rgba(252, 229, 237, 0.1) 60%,
+                rgba(252, 229, 237, 0.05) 100%) !important;
+    }
+
+    .section-background,
+    .section-border,
+    section {
+        background-color: transparent !important;
+    }
+
+    /* section backgrounds and bg gradients */
+
+    /* CONTENT WRAPPER GRADIENTS */
+    #class-offerings .content-wrapper,
+    #montmartre-classes .content-wrapper,
+    #retreats .content-wrapper {
+        width: 100% !important;
+        max-width: inherit;
+        position: relative;
+        z-index: 1;
+    }
+
+    #montmartre-classes .content-wrapper {
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.4) 7%,
+                rgba(255, 255, 255, 0.1) 12%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(255, 255, 255, 0.1) 88%,
+                rgba(255, 255, 255, 0.4) 93%,
+                rgba(255, 255, 255, 1) 100%);
+    }
+
+    #class-offerings .content-wrapper {
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 3%,
+                rgba(255, 255, 255, 0) 9%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(255, 255, 255, 0.1) 91%,
+                rgba(255, 255, 255, 0.3) 97%,
+                rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    #retreats .content-wrapper {
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(37, 53, 81, 0.2) 5%,
+                rgba(37, 53, 81, 0.3) 9%,
+                rgba(37, 53, 81, 0.5) 50%,
+                rgba(37, 53, 81, 0.3) 91%,
+                rgba(37, 53, 81, 0.2) 95%,
+                rgba(255, 255, 255, 1) 100%);
+    }
+
     /* Background - use main brand purple */
     #practice {
         background: #6565a5;
@@ -361,70 +423,62 @@
     /* SECTION WRAPPER GRADIENT SYSTEM SHINE */
     section.span-section-parent-shine {
         position: relative;
-        z-index: 0;
         overflow: hidden;
-        padding-top: 0 !important;
+        z-index: 0;
         padding: 0 !important;
-        margin-top: 0 !important;
         margin: 0 !important;
-        background-image: url("https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/1681984666212-VTQVCLTF80BIMM5H1H6L/passingthrough+pic.gif") !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
     }
 
-    /* SHINE background gif - backup pseudo-element */
+    /* SHINE background gif  */
     section.span-section-parent-shine::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image:
-            url("https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/1681984666212-VTQVCLTF80BIMM5H1H6L/passingthrough+pic.gif");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: -2;
+        inset: 0;
+        z-index: -3;
+        background: url('https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/1681984666212-VTQVCLTF80BIMM5H1H6L/passingthrough+pic.gif') center/cover no-repeat;
+        pointer-events: none;
+        filter: brightness(0.95) contrast(1.05);
+        transform: scale(1.02);
     }
 
     /* SHINE gradient overlay bg */
     section.span-section-parent-shine::after {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg,
-                rgba(40, 40, 115, 0.9) 0%,
-                rgba(55, 55, 125, 0.85) 25%,
-                rgba(70, 70, 135, 0.8) 50%,
-                rgba(85, 85, 145, 0.75) 75%,
-                rgba(100, 100, 155, 0.7) 100%);
-        z-index: 1;
+        inset: 0;
+        z-index: -2;
         pointer-events: none;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.9) 10%,
+                rgba(255, 255, 255, 0.6) 20%,
+                rgba(37, 53, 81, 0.1) 30%,
+                rgba(37, 53, 81, 0.2) 35%,
+                transparent 45%,
+                rgba(37, 53, 81, 0.5) 60%,
+                rgba(37, 53, 81, 0.4) 85%,
+                rgba(37, 53, 81, 0.3) 90%,
+                rgba(255, 255, 255, 0.3) 94%,
+                rgba(255, 255, 255, 0.95) 98%,
+                rgba(255, 255, 255, 1) 100%);
     }
 
     #share-the-shine {
         position: relative;
-        z-index: 3;
-        background: transparent !important;
-        color: white;
-        text-align: center;
-        padding: 4rem 2rem;
+        z-index: 1;
     }
 
-    #echoes {
-        position: relative;
-        z-index: 3;
-        background: transparent !important;
-    }
-
+    #echoes,
+    #echoes .user-items-list-section,
+    #echoes .content-wrapper,
+    #echoes .content,
+    #echoes .user-items-list,
+    #echoes .user-items-list-item-container,
     #echoes .user-items-list-carousel {
         position: relative;
-        z-index: 3;
+        z-index: 2 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     /* Force remove any default Squarespace backgrounds */
@@ -512,6 +566,27 @@
         #siteWrapper p.monospace {
             font-size: 1.4rem;
         }
+    }
+
+    /* === FOOTER GRADIENT OVERLAY === */
+    #footer-yoga-en .section-background:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.4) 8%,
+                rgba(255, 255, 255, 0.1) 15%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(255, 255, 255, 0.1) 85%,
+                rgba(255, 255, 255, 0.4) 92%,
+                rgba(255, 255, 255, 1) 100%);
+        opacity: 1;
     }
 </style>
 
