@@ -1,0 +1,1023 @@
+<style>
+    /* === Keep Aspect Ratio of Fullscreen Gallery Section Images === */
+    #explore-classes-gallery .gallery-fullscreen-slideshow {
+        height: clamp(0px, 56.25vw, 85vh) !important;
+    }
+
+    /* === VIDEOs in GALLERY Block === */
+    #block-yui_3_17_2_1_1746618966600_99818 {
+        .gallery-fullscreen-slideshow-item-wrapper {
+            display: none;
+        }
+
+        figcaption.gallery-caption.gallery-caption-fullscreen-slideshow {
+            top: 0 !important;
+            max-width: 100% !important;
+            height: 100% !important;
+        }
+
+        figcaption video {
+            object-fit: cover !important;
+            width: 100% !important;
+            height: auto;
+        }
+
+        @media screen and (max-width:500px) {
+            .sqs-gallery-block-slideshow .slide.loaded .meta {
+                display: block !important;
+            }
+        }
+    }
+
+    /* === [OVERLAY PRACTICES (SPAN WRAPPER - GIF) + Navy background] === */
+    section.span-section-parent-practices {
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        padding-top: 0 !important;
+        /* Force remove padding */
+        padding: 0 !important;
+        /* Remove all padding */
+        margin-top: 0 !important;
+        /* Force remove top margin */
+        margin: 0 !important;
+        /* Remove all margins */
+    }
+
+    /* GIF background */
+    section.span-section-parent-practices::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image: url('https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/5bc9d1b0-5cbe-4601-8c2e-e9d4f58ff20d/yoga+slow+flow+vid+87.gif');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        filter: blur(3px) brightness(0.9);
+        transform: scale(1.05);
+    }
+
+    /* Ensure content appears above background */
+    section.span-section-parent-practices>section {
+        position: relative;
+        z-index: 2;
+        padding-top: 0 !important;
+        /* Force remove padding from child sections */
+        margin-top: 0 !important;
+        /* Force remove margin from child sections */
+    }
+
+    /* Target the first child section specifically */
+    section.span-section-parent-practices>section:first-child {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    section.span-section-parent-practices .section-background,
+    section.span-section-parent-practices .section-border {
+        background-color: rgba(37, 53, 81, 0.5) !important;
+    }
+
+    /* === [SPLIT SECTION - Montmartre Classes] === */
+    body:not(.sqs-edit-mode-active) {
+        #montmartre-classes {
+            background-color: #fae9ea !important;
+
+            /* Desktop and larger screens */
+            @media(min-width: 768px) {
+                .section-border {
+                    width: 50%;
+                    margin-left: 50%;
+                    min-height: 50vh;
+                    height: auto;
+                    /* Allow container to expand with content */
+                }
+
+                .content-wrapper {
+                    width: 50%;
+                    margin-right: 50% !important;
+                }
+
+                /* Fix for image to be fully visible */
+                .section-background-wrapper {
+                    height: 100%;
+                }
+
+                .section-background {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                /* Ensure image covers full area without cropping */
+                .section-background img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    object-position: center center;
+                    /* Adjust this if needed to focus on specific part */
+                }
+            }
+
+            /* Additional control for content height matching */
+            @media(min-width: 768px) {
+                display: flex;
+                min-height: unset;
+
+                .content-wrapper {
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                }
+            }
+
+            /* Mobile devices */
+            @media(max-width: 767px) {
+                display: block;
+
+                .section-border,
+                .content-wrapper {
+                    position: relative;
+                    background-color: #fae9ea !important;
+                }
+
+                .section-border {
+                    height: 450px;
+                    /* Maintain your existing mobile height */
+                }
+
+                /* Ensure mobile image is fully visible */
+                .section-background img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    /* === ARROWS === */
+    /* === [CAROUSEL ARROWS - MOBILE ADJUSTMENTS to centre on each side and smaller] === */
+    @media screen and (max-width: 767px) {
+
+        #practices-list .desktop-arrows.user-items-list-carousel__arrow-wrapper,
+        #class-offerings .desktop-arrows.user-items-list-carousel__arrow-wrapper,
+        #echoes .desktop-arrows.user-items-list-carousel__arrow-wrapper,
+        #eyezen-collection .desktop-arrows.user-items-list-carousel__arrow-wrapper {
+            display: flex !important;
+        }
+
+        #practices-list .mobile-arrows,
+        #class-offerings .mobile-arrows,
+        #echoes .mobile-arrows,
+        #eyezen-collection .mobile-arrows {
+            display: none !important;
+        }
+
+        #practices-list button.user-items-list-carousel__arrow-button--left,
+        #class-offerings button.user-items-list-carousel__arrow-button--left,
+        #echoes button.user-items-list-carousel__arrow-button--left,
+        #eyezen-collection button.user-items-list-carousel__arrow-button--left,
+        #practices-list button.user-items-list-carousel__arrow-button--right,
+        #class-offerings button.user-items-list-carousel__arrow-button--right,
+        #echoes button.user-items-list-carousel__arrow-button--right,
+        #eyezen-collection button.user-items-list-carousel__arrow-button--right {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #practices-list button.user-items-list-carousel__arrow-button--left,
+        #class-offerings button.user-items-list-carousel__arrow-button--left,
+        #echoes button.user-items-list-carousel__arrow-button--left,
+        #eyezen-collection button.user-items-list-carousel__arrow-button--left {
+            left: 0;
+        }
+
+        #practices-list button.user-items-list-carousel__arrow-button--right,
+        #class-offerings button.user-items-list-carousel__arrow-button--right,
+        #echoes button.user-items-list-carousel__arrow-button--right,
+        #eyezen-collection button.user-items-list-carousel__arrow-button--right {
+            right: 0;
+        }
+    }
+
+    /* Summary block ARROWS to center on each side */
+    .sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
+        float: none;
+        width: 100%;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        z-index: 9;
+    }
+
+    /* Right arrow */
+    .sqs-gallery-design-carousel .sqs-gallery-controls .next::before {
+        background-color: #01686b;
+        color: #fff;
+        padding: 10px;
+        border-radius: 50%;
+        content: '→' !important;
+    }
+
+    /* Left arrow */
+    .sqs-gallery-design-carousel .sqs-gallery-controls .previous::before {
+        background-color: #01686b;
+        color: #fff;
+        padding: 10px;
+        border-radius: 50%;
+        content: '←' !important;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 782px) {
+        .sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
+            float: none;
+            width: 100%;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            overflow: visible !important;
+            z-index: 9;
+        }
+    }
+
+    /* === [EYEZEN-COLLECTION Section carousel overlay gradient - Dreamy fade in and out → bottom] === */
+    #eyezen-collection {
+        position: relative;
+        z-index: 0;
+    }
+
+    #eyezen-collection::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 1;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                /* soft white start */
+                rgba(255, 255, 255, 0.4) 5%,
+                /* gentle fade */
+                rgba(255, 255, 255, 0.1) 9%,
+                /* light haze */
+                rgba(255, 255, 255, 0) 50%,
+                /* clear center */
+                rgba(255, 255, 255, 0.1) 90%,
+                /* fade back in */
+                rgba(255, 255, 255, 0.4) 95%,
+                /* dreamy veil */
+                rgba(255, 255, 255, 0.95) 100%
+                /* strong white finish */
+            );
+    }
+
+    #eyezen-collection .content-wrapper,
+    #eyezen-collection .section-content {
+        position: relative;
+        z-index: 2;
+    }
+
+
+    /* === [SHINE SPAN WRAPPER across SHARE-THE-SHINE & ECHOES with gif background and overlay gradient] === */
+    section.span-section-parent-shine {
+        position: relative;
+        background-image: url('https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/1681984666212-VTQVCLTF80BIMM5H1H6L/passingthrough+pic.gif') !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 0;
+        margin-bottom: 0 !important;
+    }
+
+    section.span-section-parent-shine .section-background,
+    section.span-section-parent-shine .section-border {
+        background-color: rgba(37, 53, 81, 0.2) !important;
+    }
+
+    /* Smooth white-to-transparent top fade for SHARE-THE-SHINE */
+    section.span-section-parent-shine::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                /* solid white at top */
+                rgba(255, 255, 255, 0.9) 10%,
+                /* slight fade */
+                rgba(255, 255, 255, 0.6) 20%,
+                /* softer blend */
+                rgba(37, 53, 81, 0.1) 30%,
+                /* soft blue tone fade in */
+                rgba(37, 53, 81, 0.2) 35%,
+                transparent 60%);
+    }
+
+
+
+    /* === [CONNECY Section: Overlay Gradient Top soft mist → blue →  #a0b6be drift white] === */
+    #connect .section-background,
+    #connect .section-background-overlay {
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                /* Pure soft white top */
+                rgba(255, 255, 255, 0.9) 10%,
+                rgba(160, 182, 190, 0.08) 30%,
+                /* Very gentle hint of that soft blue */
+                rgba(160, 182, 190, 0.1) 50%,
+                /* Just a breath at the center */
+                rgba(160, 182, 190, 0.08) 70%,
+                rgba(255, 255, 255, 0.9) 90%,
+                rgba(255, 255, 255, 1) 100%
+                /* Clean white mist base again */
+            ) !important;
+        opacity: 1 !important;
+    }
+
+    /* === [OVERLAY CONNECT + FOOTER BACKGROUND Top white →  Bottom transparent fade] === */
+    #footer-yoga .section-background:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, white 0%, transparent 10%);
+        z-index: 1;
+        pointer-events: none;
+        opacity: 1;
+    }
+
+
+    /* >--- Carousel List Style ---> */
+    /* Section #eyezen carousel Change Section title */
+    #eyezen-gallery .list-section-title {
+        color: white;
+        font-weight: 800;
+        font-family: Julius Sans One;
+        font-size: 2.4rem;
+        letter-spacing: .03em;
+    }
+
+    /* Section #classes-list Change Section title */
+    #classes-list .list-section-title {
+        color: white;
+        font-weight: 800;
+        font-family: Julius Sans One;
+        font-size: 1.2rem;
+        letter-spacing: .01em;
+    }
+
+    /* change TITLE #classes-list content*/
+    #class-offerings .user-items-list-carousel .list-item .list-item-content__title {
+        color: white;
+        font-weight: 700;
+    }
+
+    /* change description */
+    #class-offerings .user-items-list-carousel .list-item-content__description p {
+        margin-left: -10%;
+        margin-right: 40%;
+        white-space: nowrap;
+        color: lightgrey;
+    }
+
+    #class-offerings .list-item-content__button-wrapper .list-item-content__button-container {
+        align-items: left !important;
+    }
+
+    /*"READ MORE" DROPDOWN #classes-list*/
+    #class-offerings .list-item-content__description p:has(u)~* {
+        display: none;
+    }
+
+    /*"Read More" link #classes-list*/
+    #class-offerings .list-item-content__description u {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        font-size: .8rem;
+        justify-content: left;
+        pointer-events: auto;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    #class-offerings .list-item-content__description u::after {
+        content: 'ⓘ' !important;
+        margin-left: 10px !important;
+    }
+
+    /*Change the symbol when the dropdown is open #classes-list*/
+    #class-offerings .list-item-content__description u.open-dropdown::after {
+        content: '-' !important;
+        margin-left: 10px !important;
+    }
+
+    /** section ECHOES **/
+    #echoes .list-section-title {
+        color: white;
+        font-weight: 800;
+        font-family: Julius Sans One;
+        font-size: 1.4rem;
+        letter-spacing: .01em;
+    }
+
+    #echoes .user-items-list-carousel .list-item .list-item-content__title {
+        color: white;
+        font-family: serif;
+        font-style: oblique;
+        font-weight: 500;
+    }
+
+    #echoes .list-item-content__description p {
+        color: white;
+        font-weight: 500;
+        letter-spacing: .01em;
+    }
+
+    /*"READ MORE" DROPDOWN ECHOES */
+    #echoes .list-item-content__description p:has(u)~* {
+        display: none;
+    }
+
+    /* "Read More" link ECHOES */
+    #echoes .list-item-content__description u {
+        align-items: right !important;
+        cursor: pointer;
+        font-size: .8rem;
+        justify-content: right;
+        pointer-events: auto;
+        text-decoration: none;
+        font-style: normal;
+        text-transform: uppercase;
+    }
+
+    #echoes .list-item-content__description u::after {
+        content: '+' !important;
+        margin-left: 10px !important;
+    }
+
+    /*change the symbol when the dropdown is open ECHOES*/
+    #echoes .list-item-content__description u.open-dropdown::after {
+        content: '-' !important;
+        margin-left: 10px !important;
+    }
+
+    /* --- end--- */
+
+
+    /* --- Buttons PULSE--- */
+    /* Apply pulse animation only to primary buttons with the specific block ID */
+    #block-609c7c3ec7c6f7256403,
+    /*retreat-yourself button*/
+    #block-6b112f5e7ba0dc07e70e,
+    /* monmarte join*/
+    #block-f053e5d01f9e5eff80ab
+
+    /*collection eyezen button*/
+    .sqs-button-element--primary {
+        animation: pulse 1s infinite alternate;
+        /* animation duration and speed */
+    }
+
+    /* PULSING ANIMATION - ADJUST THE SCALE OPTION TO CHANGE PULSING SIZE */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1.1);
+            /* button size during pulse animation */
+        }
+    }
+
+    /* --- Styling for Header --- */
+    /* code from insidethesquare.co */
+    /* mobile menu code from insidethesquare.co */
+    .header .header-burger {
+        display: flex
+    }
+
+    .header-nav,
+    .header-actions {
+        display: none
+    }
+
+    .header--menu-open .header-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* half screen desktop menu from insidethesquare.co */
+    @media only screen and (min-width:767px) {
+        .header--menu-open .header-menu {
+            width: auto;
+            box-shadow: 5px 5px 15px #333;
+            margin-left: 0%;
+        }
+    }
+
+    /* Navigation Items & Dropdowns */
+    .header-nav-item a,
+    .header-menu-nav-item a,
+    footer#footer-sections a {
+        transition: color 0.3s ease-in-out, font-style 0.3s ease-in-out;
+    }
+
+    /* Hover & Active States for Desktop & Mobile Menus */
+    .header-nav-item a:hover,
+    .header-nav-item a:focus,
+    .header-nav-item a:active,
+    .header-menu-nav-item a:hover,
+    .header-menu-nav-item a:focus,
+    .header-menu-nav-item a:active,
+    .mobile-nav a:hover,
+    .mobile-nav a:focus,
+    .mobile-nav a:active {
+        color: #FF007F !important;
+        font-style: bold !important;
+    }
+
+    /* Dropdown Menu Styling */
+    .header-nav-folder-content {
+        background: transparent !important;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        padding-top: 12px !important;
+        /* Space between menu & first dropdown */
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+
+    /* Reduce spacing between dropdown menu items */
+    .header-nav-folder-content a {
+        padding: 2px 10px !important;
+        /* Adjusted for closer spacing */
+        display: block;
+    }
+
+    /* Dropdown Active State - Works for Touch & Click */
+    .header-nav-folder-content.active,
+    .header-nav-folder-content:focus-within {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* Dropdown Items */
+    .header-nav-folder-item a {
+        transition: color 0.3s ease-in-out, font-style 0.3s ease-in-out;
+    }
+
+    .header-nav-folder-item a:hover,
+    .header-nav-folder-item a:focus,
+    .header-nav-folder-item a:active {
+        color: #FF007F !important;
+        font-style: italic !important;
+    }
+
+    /* --- Mobile Navigation --- */
+    .header-burger,
+    .burger–active {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .header-burger:active,
+    .burger–active:active {
+        transform: scale(1.1);
+    }
+
+    /* --- Style All Other Links Without Underline --- */
+    a {
+        color: inherit;
+        text-decoration: none !important;
+        transition: color 0.3s ease-in-out, font-style 0.3s ease-in-out;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        color: #FF007F !important;
+        font-style: italic !important;
+    }
+
+    /* --- EXCEPTIONS - Bio & Yoga Footer Privacy Policy --- */
+    #bio a,
+    .custom-yoga-footer a.privacy-policy {
+        text-decoration: underline !important;
+    }
+
+    /* --- Footer Links --- */
+    .custom-yoga-footer a {
+        color: #FF007F !important;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .custom-yoga-footer a:hover {
+        color: #d60069 !important;
+    }
+
+
+    /* --- Custom Footer and center--- */
+    .custom-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        max-width: 600px;
+        /* Adjust if needed */
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .custom-footer p.sqsrte-small {
+        margin: 5px 0;
+        /* Adjust spacing */
+        line-height: 1.1;
+        /* Adjust text spacing */
+        font-size: .7rem !important;
+    }
+
+
+    /* --- Background Image For Mobile Menu --- */
+    .header-menu-bg {
+        --opacity: 0.5;
+        --blur: 1px;
+    }
+
+    .header-menu-bg:after {
+        background-image: url(https://images.squarespace-cdn.com/content/v1/5dd976c8cf1ec60b3078c259/3860b778-cb05-48bc-9952-dd00dd1d4f0f/yoga+slow+flow+vid+last+one.gif);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        filter: blur(var(--blur, 0px));
+        transform: scale(1);
+        opacity: var(--opacity, 5);
+        transition: transform 0.8s ease;
+    }
+
+    .header--menu-open .header-menu-bg:before {
+        transform: scale(1.1);
+    }
+
+
+
+    /* ============================
+  2 mini sites on same site beahverhero
+    ============================ */
+    /* hide items on desktop */
+    nav.header-nav-list>div:nth-child(1),
+    nav.header-nav-list>div:nth-child(2),
+    nav.header-nav-list>div:nth-child(3),
+    nav.header-nav-list>div:nth-child(4) {
+        display: none;
+    }
+
+    /* hide items on mobile */
+    [data-folder="root"]>div:first-child>div:first-child>div:nth-child(1),
+    [data-folder="root"]>div:first-child>div:first-child>div:nth-child(2),
+    [data-folder="root"]>div:first-child>div:first-child>div:nth-child(3),
+    [data-folder="root"]>div:first-child>div:first-child>div:nth-child(4) {
+        display: none;
+    }
+
+    /* Different yoga - footer hide artwork footer (beaverhero) */
+    footer.sections section:nth-child(1),
+    footer.sections section:nth-child(3) {
+        display: none !important;
+    }
+
+    /* Portable and Desktop (≥ 1200px) */
+    @media screen and (min-width: 769px) {
+
+        footer.sections section:nth-child(1),
+        footer.sections section:nth-child(3 {
+                display: none !important;
+            }
+        }
+
+        /* Tablet (481px – 768px) */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+
+            footer.sections section:nth-child(1),
+            footer.sections section:nth-child(3 {
+                    display: none !important;
+                }
+            }
+
+            /* Mobile (≤ 428px) */
+            @media screen and (max-width: 480px) {
+
+                footer.sections section:nth-child(1),
+                footer.sections section:nth-child(3 {
+                        display: none !important;
+                    }
+                }
+
+
+
+                body.t-search footer.sections section:nth-child(1), body.t-search footer.sections section:nth-child(3) {
+                    display: none !important;
+                }
+
+
+
+                /* Rename site title - one page*/
+                a#site-title:after {
+                    content: "Nadine Norman Yoga";
+                    position: absolute;
+                    left: 0;
+                    visibility: visible;
+                    white-space: nowrap;
+                    /* Prevents text from wrapping */
+                    overflow: hidden;
+                    /* Ensures it doesn't overflow the container */
+                    max-width: 100%;
+                    /* Ensures it fits within the container */
+                    margin: 0;
+                }
+
+                a#site-title {
+                    visibility: hidden;
+                }
+
+
+
+                /** FONT SIZE (this page only) **/
+                /** RESPONSIVE media query **/
+                /* Devices larger than 991px */
+                @media (min-width: 991px) {
+                    #siteWrapper h1 {
+                        font-size: 2.4rem;
+                    }
+
+                    #siteWrapper h2 {
+                        font-size: 2rem;
+                    }
+
+                    #siteWrapper h3 {
+                        font-size: 1.6rem;
+                    }
+
+                    #siteWrapper h4 {
+                        font-size: 1.2rem;
+                    }
+
+                    #siteWrapper p.sqsrte-large {
+                        font-size: 1.2rem;
+                    }
+
+                    #siteWrapper p {
+                        font-size: 1.1rem;
+                    }
+
+                    #siteWrapper p.sqsrte-small {
+                        font-size: 1rem;
+                    }
+
+                    #siteWrapper p.monospace {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                /* Devices between 641px and 990px */
+                @media (min-width: 641px) and (max-width: 990px) {
+                    #siteWrapper h1 {
+                        font-size: 2.4rem;
+                    }
+
+                    #siteWrapper h2 {
+                        font-size: 2rem;
+                    }
+
+                    #siteWrapper h3 {
+                        font-size: 1.6rem;
+                    }
+
+                    #siteWrapper h4 {
+                        font-size: 1.2rem;
+                    }
+
+                    #siteWrapper p.sqsrte-large {
+                        font-size: 1.1rem;
+                    }
+
+                    #siteWrapper p {
+                        font-size: 1rem;
+                    }
+
+                    #siteWrapper p.sqsrte-small {
+                        font-size: 0.9rem;
+                    }
+
+                    #siteWrapper p.monospace {
+                        font-size: 1.4rem;
+                    }
+                }
+
+
+                /* Devices smaller than 640px */
+                @media (max-width: 640px) {
+                    #siteWrapper h1 {
+                        font-size: 2.2rem;
+                    }
+
+                    #siteWrapper h2 {
+                        font-size: 1.8rem;
+                    }
+
+                    #siteWrapper h3 {
+                        font-size: 1.4rem;
+                    }
+
+                    #siteWrapper h4 {
+                        font-size: 1rem;
+                    }
+
+                    #siteWrapper p.sqsrte-large {
+                        font-size: 1rem;
+                    }
+
+                    #siteWrapper p {
+                        font-size: 0.9rem;
+                    }
+
+                    #siteWrapper p.sqsrte-small {
+                        font-size: 0.8rem;
+                    }
+
+                    #siteWrapper p.monospace {
+                        font-size: 1.4rem;
+                    }
+                }
+</style>
+
+
+
+<!-- jQuery to wrap span 2 sections -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        // === Wrap PRACTICES & PRACTICES-LIST ===
+        $('section[data-section-id="67e2de993ff0a12d6477ad2e"], section[data-section-id="67e2de993ff0a12d6477ad2f"]')
+            .wrapAll('<section class="span-section-parent-practices"></section>');
+
+        // === Wrap SHARE-THE-SHINE & ECHOES ===
+        $('section[data-section-id="67f939c38fa8c82dd012f9b3"], section[data-section-id="67e2de993ff0a12d6477ad61"]')
+            .wrapAll('<section class="span-section-parent-shine"></section>');
+
+    });
+</script>
+
+
+<!-- something about the burger open ??? -->
+<script>
+    jQuery(document).ready(function ($) {
+        $('.header-menu-nav-item a').click(function () {
+            $('body').removeClass('header--menu-open');
+            $('button.header-burger-btn.burger').click();
+        });
+    })
+</script>
+
+<!-- ========================= -->
+<!-- Custom Social Links Swap for /yoga-en Page -->
+<!--  This script changes the social icon links for this page only.-->
+<!-- ========================= -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to change href attribute if the element exists
+        function changeLink(selector, newUrl) {
+            let element = document.querySelector(selector);
+            if (element) { element.href = newUrl; }
+        }
+
+        // Swap the email link
+        changeLink('a[href="mailto:nadine.norman@icloud.com"]', "/yoga-en#fhtogglesection/67fd18fd5e65542a11be70c3/default/modal/");
+
+        // Swap the Facebook link
+        changeLink('a[href="https://www.facebook.com/nadine.norman"]', "https://www.facebook.com/nadinenormanyoga/");
+
+        // Ensure Instagram remains unchanged (no action needed)
+
+        // Swap the URL chain link 
+        changeLink('a[href="https://www.nadinenorman.com/artwork/"]', "https://www.nadinenorman.com/yoga-en/");
+
+        // Make Yoga-EN link fully visible
+        let yogaEN = document.querySelector('a[href="https://www.nadinenorman.com/yoga-en"]');
+        if (yogaEN) {
+            yogaEN.style.display = "inline-block";
+            yogaEN.style.visibility = "visible";
+            yogaEN.style.opacity = "1";
+            yogaEN.style.height = "auto";
+            yogaEN.style.width = "auto";
+        }
+    });
+</script>
+
+<!-- ========================= -->
+<!-- Reveal Hidden Sections Expand 2.0 -->
+<!-- ========================= -->
+
+
+<!-- ========================= -->
+<!-- Different Logo URL  -->
+<!-- ========================= -->
+<!-- this page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('a#site-title, .header-title a').attr('href', 'https://www.nadinenorman.com/yoga-en');
+    });
+</script>
+
+<!-- Search Page -->
+<script>
+    if (document.location.pathname.indexOf("/search") == 0) {
+        document.querySelector('body').classList.add('t-search')
+    }
+</script>
+<!-- ========================= -->
+<!-- Custom Yoga footer -->
+<script>
+    (function () {
+        document.addEventListener("DOMContentLoaded", function () {
+            let yogaPages = ["/yoga-en", "/yoga-fr"];
+            let currentPath = window.location.pathname;
+
+            if (yogaPages.some(slug => currentPath.includes(slug))) {
+                let customFooter = document.createElement("div");
+                customFooter.classList.add("custom-footer");
+
+                let language = currentPath.includes("/yoga-fr") ? "fr" : "en";
+
+                if (language === "fr") {
+                    customFooter.innerHTML = `
+            <p class="sqsrte-small">&copy; ${new Date().getFullYear()} Nadine Norman. Tous droits réservés.</p>
+            <p class="sqsrte-small"><a href='/mentions-legales'>Mentions Légales</a> | <a href='/politique-confidentialite'>Politique de Confidentialité</a></p>
+          `;
+                } else {
+                    customFooter.innerHTML = `
+            <p class="sqsrte-small">&copy; ${new Date().getFullYear()} Nadine Norman. All rights reserved.</p>
+            <p class="sqsrte-small"><a href='/legal-notice'>Legal Notice</a> | <a href='/privacy-policy'>Privacy Policy</a></p>
+          `;
+                }
+
+                let footer = document.querySelector("footer#footer-sections");
+                if (footer) {
+                    footer.appendChild(customFooter);
+                }
+            }
+        });
+    })();
+</script>
